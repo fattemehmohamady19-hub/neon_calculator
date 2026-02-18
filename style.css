@@ -1,0 +1,128 @@
+ :root {
+    --bg-color: #1e1e2f;
+    --calc-bg: #2d2d44;
+    --btn-color: #444;
+    --btn-hover: #00ffea;
+    --text-color: #fff;
+}
+
+body.light {
+    --bg-color: #f4f4f4;
+    --calc-bg: #fff;
+    --btn-color: #ddd;
+    --btn-hover: #00bfff;
+    --text-color: #000;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: var(--bg-color);
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    transition: background 0.3s, color 0.3s;
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.theme-toggle button {
+    background: var(--btn-color);
+    color: var(--text-color);
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.calculator {
+    background: var(--calc-bg);
+    padding: 20px;
+    border-radius: 15px;
+    width: 320px;
+    box-shadow: 0 0 20px #00ffe0, 0 0 60px #00ffe0 inset;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+#display {
+    width: 100%;
+    height: 60px;
+    margin-bottom: 15px;
+    font-size: 22px;
+    text-align: right;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    box-sizing: border-box;
+    color: var(--text-color);
+    background: rgba(0,0,0,0.2);
+    text-shadow: 0 0 5px #00ffe0;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+button {
+    height: 60px;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background: var(--btn-color);
+    color: var(--text-color);
+    box-shadow: 0 0 10px #00ffe0;
+    transition: all 0.2s;
+}
+
+button:hover {
+    background: var(--btn-hover);
+    color: #000;
+    box-shadow: 0 0 20px #00ffe0, 0 0 40px #00ffe0 inset;
+}
+
+.zero {
+    grid-column: span 2;
+}
+
+/* ==== ریسپانسیو ==== */
+@media (max-width: 480px) {
+    .calculator {
+        width: 90%;
+        padding: 15px;
+    }
+
+    #display {
+        height: 50px;
+        font-size: 18px;
+    }
+
+    button {
+        height: 50px;
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .calculator {
+        width: 80%;
+        padding: 18px;
+    }
+
+    #display {
+        height: 55px;
+        font-size: 20px;
+    }
+
+    button {
+        height: 55px;
+        font-size: 19px;
+    }
+}
